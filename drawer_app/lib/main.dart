@@ -30,9 +30,41 @@ class HomePage extends StatelessWidget {
         gradient: LinearGradient(
           colors: [Colors.amber, Colors.redAccent]
         ),
-    
-
       ),
+      drawer: Drawer(
+        child: ListView(
+          children: <Widget>[
+            UserAccountsDrawerHeader(
+              accountName: Text("Ajay Sharma"),
+              accountEmail: Text("ajasharma@gmail.com"),
+              currentAccountPicture: CircleAvatar(
+                backgroundColor: Colors.black,
+              ),
+              
+            ),
+            ListTile(            
+              title: Text("Page 1"),
+              trailing: Icon(Icons.arrow_upward),
+            ),
+                ListTile(
+              title: Text("Page 2"),
+              trailing: Icon(Icons.arrow_downward),
+            ),
+            Divider(),
+                ListTile(
+             
+              title: Text("Close"),
+              trailing: Icon(Icons.close),
+            )
+          ],
+        ),
+      ),
+      body: Container( 
+        child: Center(
+          child: Text("Home Page"),
+        ),
+      ),
+
       
     );
   }
