@@ -10,7 +10,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData(
         
-        primarySwatch: Colors.cyan,
+        primarySwatch: Colors.amber,
+        primaryColor: defaultTargetPlatform == TargetPlatform.iOS ? Colors.grey[50] : null,
       
       ),
       
@@ -38,10 +39,16 @@ class HomePage extends StatelessWidget {
               accountName: Text("Ajay Sharma",style: TextStyle(color: Colors.black),),
               accountEmail: Text("ajasharma@gmail.com",style: TextStyle(color: Colors.black),),
               currentAccountPicture: CircleAvatar(
-                backgroundColor: Colors.red,
+                backgroundColor: Theme.of(context).platform == TargetPlatform.iOS ? Colors.black : Colors.white,
                 child: Text("A",style:TextStyle(fontSize: 24)),
               ),
               
+              otherAccountsPictures: <Widget>[
+                CircleAvatar(
+                backgroundColor: Theme.of(context).platform == TargetPlatform.iOS ? Colors.black : Colors.white,
+                  child: Text("R"),
+                )
+              ],
             ),
             ListTile(            
               title: Text("Page 1"),
@@ -56,6 +63,7 @@ class HomePage extends StatelessWidget {
              
               title: Text("Close"),
               trailing: Icon(Icons.close),
+              onTap: () => Navigator.of(context).pop(),
             )
           ],
         ),
