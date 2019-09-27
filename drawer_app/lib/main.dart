@@ -35,10 +35,11 @@ class HomePage extends StatelessWidget {
         child: ListView(
           children: <Widget>[
             UserAccountsDrawerHeader(
-              accountName: Text("Ajay Sharma"),
-              accountEmail: Text("ajasharma@gmail.com"),
+              accountName: Text("Ajay Sharma",style: TextStyle(color: Colors.black),),
+              accountEmail: Text("ajasharma@gmail.com",style: TextStyle(color: Colors.black),),
               currentAccountPicture: CircleAvatar(
-                backgroundColor: Colors.black,
+                backgroundColor: Colors.red,
+                child: Text("A",style:TextStyle(fontSize: 24)),
               ),
               
             ),
