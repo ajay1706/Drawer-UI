@@ -1,3 +1,4 @@
+import 'package:drawer_app/new_page.dart';
 import 'package:flutter/material.dart';
 import 'package:gradient_app_bar/gradient_app_bar.dart';
 import 'package:flutter/foundation.dart';
@@ -16,6 +17,9 @@ class MyApp extends StatelessWidget {
       ),
       
       home: HomePage(),
+  //     routes: <String, WidgetBuilder>{
+  //       "/a" : (BuildContext context) => NewPage("New Page")
+  // }
     );
   }
 }
@@ -53,10 +57,25 @@ class HomePage extends StatelessWidget {
             ListTile(            
               title: Text("Page 1"),
               trailing: Icon(Icons.arrow_upward),
+              onTap: () { 
+                Navigator.of(context).pop();
+                Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context) => NewPage("Page One")),);
+                
+                // Navigator.of(context).pushNamed("/a");
+              
+              },
             ),
                 ListTile(
               title: Text("Page 2"),
               trailing: Icon(Icons.arrow_downward),
+              onTap: () { 
+                Navigator.of(context).pop();
+                Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context) => NewPage("Page Two")),);
+
+                
+                // Navigator.of(context).pushNamed("/a");
+              
+              },
             ),
             Divider(),
                 ListTile(
